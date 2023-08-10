@@ -12,14 +12,14 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Gavimass/Flipkart_shop.git'
             }
         }
-         stage('verifying') {
+         stage('copying') {
             steps {
-                echo 'verify the project it is cloned'
+                echo 'verify the project where it is cloned'
                 sh 'pwd'
                 sh 'ls'
             }
         }
-         stage('copying') {
+         stage('deploying to httpd') {
             steps {
                 echo 'copying the files'
                 sh 'scp -i /home/ec2-user/key.pem -r /var/jenkins/workspace/pipeline_project_task/* ec2-user@18.143.118.175:/var/www/html'
