@@ -22,7 +22,7 @@ pipeline {
          stage('deploying to httpd') {
             steps {
                 echo 'copying the files'
-                sh 'scp -i /home/ec2-user/key.pem -r /var/jenkins/workspace/pipeline_project_task/* ec2-user@18.143.118.175:/var/www/html'
+                sh 'scp -i /home/ec2-user/key.pem -r /var/jenkins/workspace/cicd-pipeline/* ec2-user@52.221.254.83:/var/www/html'
                 
             }
         }
